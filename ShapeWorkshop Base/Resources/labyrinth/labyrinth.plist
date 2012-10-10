@@ -19,67 +19,6 @@
 	<array>
 		<dict>
 			<key>name</key>
-			<string>level 1</string>
-			<key>position</key>
-			<array>
-				<real>9.6669921875</real>
-				<real>8.333984375</real>
-			</array>
-			<key>rotation</key>
-			<real>0</real>
-			<key>z-position</key>
-			<integer>0</integer>
-			<key>shape</key>
-			<dict>
-				<key>type</key>
-				<string>polygon</string>
-				<key>sub-type</key>
-				<string>closed</string>
-				<key>outline</key>
-				<array>
-					<array>
-						<real>0</real>
-						<real>623.3330078125</real>
-					</array>
-					<array>
-						<real>939.666015625</real>
-						<real>623.3330078125</real>
-					</array>
-					<array>
-						<real>939.666015625</real>
-						<real>0</real>
-					</array>
-					<array>
-						<real>0</real>
-						<real>0</real>
-					</array>
-				</array>
-			</dict>
-			<key>dimensions</key>
-			<array>
-				<real>946</real>
-				<real>630</real>
-			</array>
-			<key>sprite</key>
-			<dict>
-				<key>name</key>
-				<string>level 1</string>
-				<key>file-name</key>
-				<string>level 1.png</string>
-				<key>position</key>
-				<array>
-					<real>0</real>
-					<real>0</real>
-				</array>
-				<key>offset</key>
-				<array>
-					<real>-2</real>
-					<real>-2</real>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>level 2</string>
 			<key>position</key>
 			<array>

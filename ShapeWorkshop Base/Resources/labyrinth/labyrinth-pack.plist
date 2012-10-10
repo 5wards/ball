@@ -4,19 +4,6 @@
 <dict>
 	<key>frames</key>
 	<dict>
-		<key>level 1.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,0},{944,628}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{944,628}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
 		<key>level 2.png</key>
 		<dict>
 			<key>frame</key>
@@ -43,84 +30,6 @@
 			<key>sourceColorRect</key>
 			<string>{{0,0},{1024,2048}}</string>
 		</dict>
-		<key>level 6.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{944,278},{76,251}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{76,251}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 5.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{924,628},{46,140}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{46,140}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 17.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{924,768},{71,116}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{71,116}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 3.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,1237},{197,108}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{197,108}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 14.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{197,1237},{227,98}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{227,98}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 12.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{197,1335},{659,88}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{659,88}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
 		<key>level 10.png</key>
 		<dict>
 			<key>frame</key>
@@ -134,19 +43,6 @@
 			<key>sourceColorRect</key>
 			<string>{{0,0},{1024,2048}}</string>
 		</dict>
-		<key>level 7.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{944,529},{50,50}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{50,50}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
 		<key>level 8.png</key>
 		<dict>
 			<key>frame</key>
@@ -157,58 +53,6 @@
 			<false/>
 			<key>sourceSize</key>
 			<string>{48,48}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 4.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{424,1237},{278,44}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{278,44}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 11.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,1345},{110,43}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{110,43}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 16.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{424,1281},{278,39}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{278,39}</string>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
-		</dict>
-		<key>level 15.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{924,966},{96,21}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceSize</key>
-			<string>{96,21}</string>
 			<key>sourceColorRect</key>
 			<string>{{0,0},{1024,2048}}</string>
 		</dict>
