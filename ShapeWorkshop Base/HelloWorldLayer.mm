@@ -318,7 +318,7 @@
     _ball.spriteLink.visible = NO;
 
     // Reset it's sprite to scale 1
-    _ball.spriteLink.scale = 1;
+    //_ball.spriteLink.scale = 1;
     
     // Get hold of the Box2D body
     NSValue * bodyValue = _ball.physicsLink;
