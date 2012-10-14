@@ -54,6 +54,7 @@
     return [[self alloc] initBLevel:element];
 }
 
+
 // Internal init method
 -(id) initBLevel: (NSDictionary *) element {
     if((self=[super init])) {

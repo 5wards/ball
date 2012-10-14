@@ -7,33 +7,85 @@
 		<key>level 2.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{0,628},{924,609}}</string>
+			<string>{{0,0},{1024,768}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceSize</key>
-			<string>{924,609}</string>
+			<string>{1024,768}</string>
 			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
+			<string>{{0,0},{1024,1024}}</string>
 		</dict>
 		<key>level 9.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{944,0},{51,278}}</string>
+			<string>{{144,768},{62,43}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceSize</key>
-			<string>{51,278}</string>
+			<string>{62,43}</string>
 			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
+			<string>{{0,0},{1024,1024}}</string>
+		</dict>
+		<key>level 11.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{206,768},{62,43}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceSize</key>
+			<string>{62,43}</string>
+			<key>sourceColorRect</key>
+			<string>{{0,0},{1024,1024}}</string>
+		</dict>
+		<key>level 12.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{144,811},{25,70}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceSize</key>
+			<string>{25,70}</string>
+			<key>sourceColorRect</key>
+			<string>{{0,0},{1024,1024}}</string>
+		</dict>
+		<key>level 13.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{169,811},{76,70}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceSize</key>
+			<string>{76,70}</string>
+			<key>sourceColorRect</key>
+			<string>{{0,0},{1024,1024}}</string>
+		</dict>
+		<key>level 14.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{245,811},{25,70}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceSize</key>
+			<string>{25,70}</string>
+			<key>sourceColorRect</key>
+			<string>{{0,0},{1024,1024}}</string>
 		</dict>
 		<key>level 10.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{924,884},{82,82}}</string>
+			<string>{{62,768},{82,82}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -41,12 +93,12 @@
 			<key>sourceSize</key>
 			<string>{82,82}</string>
 			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
+			<string>{{0,0},{1024,1024}}</string>
 		</dict>
 		<key>level 8.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{944,579},{48,48}}</string>
+			<string>{{0,768},{48,48}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -54,7 +106,7 @@
 			<key>sourceSize</key>
 			<string>{48,48}</string>
 			<key>sourceColorRect</key>
-			<string>{{0,0},{1024,2048}}</string>
+			<string>{{0,0},{1024,1024}}</string>
 		</dict>
 	</dict>
 	<key>metadata</key>
@@ -62,11 +114,11 @@
 		<key>format</key>
 		<integer>2</integer>
 		<key>realTextureFileName</key>
-		<string>labyrinth-spritesheet1.png</string>
+		<string>background.png</string>
 		<key>textureFileName</key>
-		<string>labyrinth-spritesheet1.png</string>
+		<string>background.png</string>
 		<key>size</key>
-		<string>{1024,2048}</string>
+		<string>{1024,1024}</string>
 	</dict>
 </dict>
 </plist>

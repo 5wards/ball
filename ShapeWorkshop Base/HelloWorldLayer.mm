@@ -43,6 +43,7 @@
          * Setting up the world
          */
         self.isAccelerometerEnabled = YES;
+        
         // Get a link to the level config file
         NSString * path = [[NSBundle mainBundle] pathForResource:@"labyrinth" ofType:@"plist"];
         
@@ -50,10 +51,10 @@
         _level = [BLevel levelWithContentsOfFile:path];
         
         // Add the sprite sheet to Cocos2D
-        [BBox2DBuilder setSpriteSheet:self withSpriteSheet:@"labyrinth-spritesheet1.png" withPackFile:@"labyrinth-pack.plist"];
+        [BBox2DBuilder setSpriteSheet:self withSpriteSheet:@"background.png" withPackFile:@"labyrinth-pack.plist"];
         
         // Build the Box2D world
-        _builder =  [BBox2DBuilder box2DBuilderWithLevel:_level withDebug:NO];
+        _builder =  [BBox2DBuilder box2DBuilderWithLevel:_level withDebug:YES];
         _world = [_builder world];
         
         // Add individual element's sprites to the layer
@@ -150,6 +151,7 @@
             }
         }];
         
+        
         // Add the button to the menu
         _menu = [CCMenu menuWithItems: _button, nil];
         // Hide the menu
@@ -168,20 +170,7 @@
 
 // Called when the ball collides with something
 -(void) startContact: (BElement *) elmA withElmB: (BElement *) elmB {
-    // If the ball hits a wall
-    if([self testElements:elmA withElmB:elmB withTag:@"hole" withTag2:@"ball"]) {
-        // We want to shrink the ball as if it's falling and move it towarsd the centre of the hole
-        // we will add a pointer to the hole and then check every loop if the ball is sufficiently
-        // into the hole i.e. it won't fall if the ball just touches the hole the ball needs to be
-        // half over the hole as it would in real life
-        if([elmA containsTag:@"hole"]) {
-            _hole = elmA;
-        }
-        else {
-            _hole = elmB;
-        }
-    }
-    
+   
     // If the ball hits the bouncer
     if([self testElements:elmA withElmB:elmB withTag:@"bouncer" withTag2:@"ball"]) {
         // Get the position of the bouncer
@@ -421,13 +410,13 @@
     
     // Check if the ball is over half in the hole
     if(_runPhysics) {
-        CGPoint holePos = _hole.spriteLink.position;
+        //CGPoint holePos = _hole.spriteLink.position;
         CGPoint ballPos = _ball.spriteLink.position;
         
-        //NSLog(@"ball.position: %f, %f", _ball.spriteLink.position.x, _ball.spriteLink.position.y);
+        NSLog(@"ball.position: %f, %f", _ball.spriteLink.position.x, _ball.spriteLink.position.y);
         
         // Calculate the distance of ball from the hole
-        float dist = sqrtf(powf(holePos.x - ballPos.x, 2) + powf(holePos.y - ballPos.y, 2));
+        //float dist = sqrtf(powf(holePos.x - ballPos.x, 2) + powf(holePos.y - ballPos.y, 2));
         //NSLog(@"Sila: %f, %f", ballBody->GetLinearVelocity.Length(), _ballForce.y); //_ballForce.x!=0 && _ballForce.y
         // If the distance is less than 50% of the balls width it will fall
         // This is because in reality the contact surface of the ball on the
@@ -435,10 +424,10 @@
         // this contact area is in the hole will the ball fall.
     
         //NSLog(@"Sila: %f, %f", ballBody->GetLinearVelocity().x, _ballForce.y); //_ballForce.x!=0 && _ballForce.y
-        if(ballPos.x < 25 && ballBody->GetLinearVelocity().x < 0) {
+        if(ballPos.x < 20 && ballBody->GetLinearVelocity().x < 0) {
             [self triggerFallAnimation];
         }
-        if(ballPos.x > 875 && ballBody->GetLinearVelocity().x > 0) {
+        if(ballPos.x > 950 && ballBody->GetLinearVelocity().x > 0) {
             [self triggerFallAnimation];
         }
     }
