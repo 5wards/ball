@@ -11,7 +11,7 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
-
+#define PTM_RATIO 20
 
 
 #pragma mark - HelloWorldLayer
@@ -103,64 +103,6 @@
         
         // Add the contact listener to the Box2D world
         _builder.world->SetContactListener(_contactListener);
-
-        // Setup the animation for when the ball falls in a hole
-        
-        
-        // Access the shared frames cache - global store of frames
-        CCSpriteFrameCache * cache = [CCSpriteFrameCache sharedSpriteFrameCache];
-        
-        // Load the available frames from the sprite sheet
-        [cache addSpriteFramesWithFile:@"ball_falling_anim.plist" textureFilename:@"ball_falling_anim.png"];
-        
-        // Create an array of frames - stored as a member variable
-        NSMutableArray *ballFrames = [NSMutableArray new];
-        for(NSInteger i =1; i<15; i++) {
-            // The names of the objects in the sprite sheet are the same as the images files
-            // before they are loaded into the sprite sheet i.e. ball-1, ball-2 etc...
-            //NSLog(@"Frame:%@", [NSString stringWithFormat:@"ball-%i", i]);
-            [ballFrames addObject:[cache spriteFrameByName:[NSString stringWithFormat:@"ball-%i.png", i]]];
-        }
-        
-        // Put these frames in a normal NSArray member variable
-        _ballAnimationFrames = [NSArray arrayWithArray:ballFrames];
-        [_ballAnimationFrames retain];
-
-        // Setup the menu for when the player completes the level
-        _button = [CCMenuItemImage itemWithNormalImage:@"end_menu.png" selectedImage:@"end_menu.png" block:^(id) {
-            if(_ball != Nil) {
-                // Get the ball's box2d body
-                NSValue * bodyValue = _ball.physicsLink;
-                b2Body * ballBody;
-                
-                [bodyValue getValue:&ballBody];
-                
-                // Return the ball to it's start position
-                ballBody->SetTransform(_startPosition, 0);
-                ballBody->SetAwake(YES);
-                
-                // Set the physics running
-                _runPhysics = YES;
-                
-                // Make the sprite visible again
-                _ball.spriteLink.visible = YES;
-                
-                // Hide this menu
-                _menu.visible = NO;
-                
-            }
-        }];
-        
-        
-        // Add the button to the menu
-        _menu = [CCMenu menuWithItems: _button, nil];
-        // Hide the menu
-        _menu.visible = NO;
-        // Position the menu in the centre of the screen
-        _menu.position = ccp(480, 320);
-		
-        // Add the menu to this layer
-        [self addChild:_menu z:200];
         
 		[self scheduleUpdate];
 	}
@@ -207,12 +149,6 @@
         
         [bouncer.spriteLink runAction:[CCSequence actions:scaleUp, scaleDown, nil]];
     }
-    
-    // If the ball reaches the end zone show the "play again" menu
-    if([self testElements:elmA withElmB:elmB withTag:@"endzone" withTag2:@"ball"]) {
-        _menu.visible = TRUE;
-        _runPhysics = NO;
-    }
 }
 
 -(void) endContact: (BElement *) elmA withElmB: (BElement *) elmB {
@@ -235,72 +171,63 @@
  
 
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch* touch = [touches anyObject];
-    [self updateBallForce:touch];
+    //UITouch* touch = [touches anyObject];
+    //[self updateBallForce:touch];
     
 }
 
 - (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+}
+
+-(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch* touch = [touches anyObject];
     [self updateBallForce:touch];
 }
 
--(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    b2Vec2 force (0,0);
-    _ballForce = force;
-    NSLog(@"Force: %f, %f", _ballForce.x, _ballForce.y);
+-(void) triggerTouch {
+    // Stop the physics engine from updating
+    _runPhysics = NO;
+    
+    // Setup the frame by frame rolling animation
+    id animate = [CCAnimate  actionWithAnimation:[CCAnimation animationWithSpriteFrames:_ballAnimationFrames]];
+    
+    // When the animation has ended call the endAnimation function
+    id end = [CCCallFunc actionWithTarget:self selector:@selector(stopBall)];
+    
+    // Put these actions into a sequence and run them
+    [_ball.spriteLink runAction:[CCSequence actions:animate, end, nil]];
 }
 
 - (void) updateBallForce: (UITouch *) touch {
     
-    // Get the location of the touch
     CGPoint location = [touch locationInView:touch.view];
     
-    // Find the position relative to the centre of the screen
-    // remember the screen is 480x320 with the origin at the 
-    // top left hand corner
-    float xRel = location.x - 240;
-    // Make it so y-up is positive negative
-    float yRel = -location.y + 160;
+    _runPhysics = NO;
+    _ball.spriteLink.visible = NO;
     
-    // Scale xRel and yRel so they vary between 0 and 1
-    xRel = xRel / 240;
-    yRel = yRel / 160;
+    // Get hold of the Box2D body
+    NSValue * bodyValue = _ball.physicsLink;
+    b2Body * ballBody;
     
+    [bodyValue getValue:&ballBody];
+    //b2Vec2 ballPos = ballBody->GetPosition();
+    //NSLog(@"Touch Location: %f, %f", location.x, location.y/PTM_RATIO-1);
+    //NSLog(@"Ball Location: %f, %f", ballPos.x, ballPos.y);
+
+    ballBody->SetLinearVelocity(b2Vec2(0,0));
+    ballBody->SetTransform(b2Vec2(location.x/PTM_RATIO -1,37 - location.y/PTM_RATIO), 0);
+    //NSLog(@"Ball after reposition: %f, %f", ballPos.x, ballPos.y);
+    // The animation will have change the sprite frame. To reset
+    // this we need to set the displayed frame back to the original ball
+    [_ball.spriteLink setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:_ball.sprite]];
     
-    // Now apply a force to the ball 
-    float maxForce = 15 ;
+    // Make the ball visible again
+    _ball.spriteLink.visible = YES;
     
-    // Check that there is a ball
-    if(_ball != Nil) {
-        b2Body * ballBody;
-        
-        // The body is stored as a pointer wrapped in an NSValue
-        // get a reference to the NSValue
-        NSValue * bodyValue = _ball.physicsLink;
-        
-        // Populate ballBody with the reference
-        [bodyValue getValue:&ballBody];
-        
-        // Set the linear damping. This means that if the ball
-        // will gradually come to rest if we don't tilt the 
-        // phone. 
-        ballBody->SetLinearDamping(0.5);
-        
-        // Make sure the body is awake
-        ballBody->SetAwake(YES);
-        
-        // Create a new force depending on where we've touched on the screen
-        b2Vec2 force (xRel * maxForce * ballBody->GetMass(), yRel * maxForce* ballBody->GetMass());
-        _ballForce = force;
-        
-        
-        
-        
-    }    
+    // Restart physics
+    _runPhysics = YES;
+    
 }
-
-
 
 
 -(void) endAnimation {
@@ -344,17 +271,6 @@
 -(void) triggerFallAnimation {
     // Stop the physics engine from updating
     _runPhysics = NO;
-    
-    // Get the position of the hole
-    //CGPoint holePos = _hole.spriteLink.position;
-    // Get the hole size
-    //CGSize holeSize = _hole.spriteLink.boundingBox.size;
-    
-    // Move the ball to the centre of the hole
-    //id move = [CCMoveTo actionWithDuration:0.1  position:ccp(holePos.x + holeSize.width*0.1,
-     //                                                      holePos.y + holeSize.height*0.1)];
-    // Shrink the ball to 80% of it's normal size
-    id shrink = [CCScaleTo actionWithDuration:0.1 scale:0.8];
     
     // Setup the frame by frame rolling animation
     id animate = [CCAnimate  actionWithAnimation:[CCAnimation animationWithSpriteFrames:_ballAnimationFrames]];
@@ -413,7 +329,7 @@
         //CGPoint holePos = _hole.spriteLink.position;
         CGPoint ballPos = _ball.spriteLink.position;
         
-        NSLog(@"ball.position: %f, %f", _ball.spriteLink.position.x, _ball.spriteLink.position.y);
+        //NSLog(@"ball.position: %f, %f", _ball.spriteLink.position.x, _ball.spriteLink.position.y);
         
         // Calculate the distance of ball from the hole
         //float dist = sqrtf(powf(holePos.x - ballPos.x, 2) + powf(holePos.y - ballPos.y, 2));
@@ -485,7 +401,7 @@
     
     // Set the gravity by the tilt angle
     b2Vec2 gravity ( 40 * acceleration.y, - 40 * acceleration.x);
-    NSLog(@"Gravity: %f, %f", gravity.x, gravity.y);
+    //NSLog(@"Gravity: %f, %f", gravity.x, gravity.y);
     _world->SetGravity(gravity);
     NSLog(@"Acceleration: %f, %f, %f", acceleration.x, acceleration.y, acceleration.z);
 }

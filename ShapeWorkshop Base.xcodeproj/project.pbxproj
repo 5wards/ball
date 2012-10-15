@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		421A3E1115811AE80039CCC0 /* labyrinth-pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 421A3E0E15811AE80039CCC0 /* labyrinth-pack.plist */; };
-		421A3E1215811AE80039CCC0 /* labyrinth-spritesheet1.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3E0F15811AE80039CCC0 /* labyrinth-spritesheet1.png */; };
 		421A3E1315811AE80039CCC0 /* labyrinth.plist in Resources */ = {isa = PBXBuildFile; fileRef = 421A3E1015811AE80039CCC0 /* labyrinth.plist */; };
 		421A3E2115816B900039CCC0 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 421A3E2015816B900039CCC0 /* MyContactListener.mm */; };
-		426189EE15854D5000A2E58E /* end_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 426189ED15854D5000A2E58E /* end_menu.png */; };
 		4271427C1574128600A6E2AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4271427B1574128600A6E2AE /* QuartzCore.framework */; };
 		4271427E1574128600A6E2AE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4271427D1574128600A6E2AE /* OpenGLES.framework */; };
 		427142801574128600A6E2AE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4271427F1574128600A6E2AE /* OpenAL.framework */; };
@@ -182,8 +180,6 @@
 		42BD89F8158D5FBC0046A191 /* BBox2DBuilder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42BD89F3158D5FBC0046A191 /* BBox2DBuilder.mm */; };
 		42BD89F9158D5FBC0046A191 /* BElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD89F5158D5FBC0046A191 /* BElement.m */; };
 		42BD89FA158D5FBC0046A191 /* BLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD89F7158D5FBC0046A191 /* BLevel.m */; };
-		42FF0EF41585046900F2591D /* ball_falling_anim.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42FF0EF21585046900F2591D /* ball_falling_anim.plist */; };
-		42FF0EF51585046900F2591D /* ball_falling_anim.png in Resources */ = {isa = PBXBuildFile; fileRef = 42FF0EF31585046900F2591D /* ball_falling_anim.png */; };
 		7C46866E1629634200B93779 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C46866D1629634200B93779 /* background.png */; };
 		7CF5EF631620703900986A3E /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF5EF621620703800986A3E /* Default-Landscape@2x~ipad.png */; };
 		7CF5EF67162070D700986A3E /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF5EF66162070D600986A3E /* Default-Portrait@2x~ipad.png */; };
@@ -191,11 +187,9 @@
 
 /* Begin PBXFileReference section */
 		421A3E0E15811AE80039CCC0 /* labyrinth-pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "labyrinth-pack.plist"; path = "Resources/labyrinth/labyrinth-pack.plist"; sourceTree = "<group>"; };
-		421A3E0F15811AE80039CCC0 /* labyrinth-spritesheet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "labyrinth-spritesheet1.png"; path = "Resources/labyrinth/labyrinth-spritesheet1.png"; sourceTree = "<group>"; };
 		421A3E1015811AE80039CCC0 /* labyrinth.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = labyrinth.plist; path = Resources/labyrinth/labyrinth.plist; sourceTree = "<group>"; };
 		421A3E1F15816B900039CCC0 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
 		421A3E2015816B900039CCC0 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
-		426189ED15854D5000A2E58E /* end_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = end_menu.png; path = Resources/end_menu.png; sourceTree = "<group>"; };
 		427142771574128600A6E2AE /* ShapeWorkshop Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShapeWorkshop Base.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4271427B1574128600A6E2AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4271427D1574128600A6E2AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -554,8 +548,6 @@
 		42BD89F5158D5FBC0046A191 /* BElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BElement.m; path = ShapeWorkshop/BElement.m; sourceTree = "<group>"; };
 		42BD89F6158D5FBC0046A191 /* BLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLevel.h; path = ShapeWorkshop/BLevel.h; sourceTree = "<group>"; };
 		42BD89F7158D5FBC0046A191 /* BLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLevel.m; path = ShapeWorkshop/BLevel.m; sourceTree = "<group>"; };
-		42FF0EF21585046900F2591D /* ball_falling_anim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ball_falling_anim.plist; path = Resources/ball_falling_anim.plist; sourceTree = "<group>"; };
-		42FF0EF31585046900F2591D /* ball_falling_anim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball_falling_anim.png; path = Resources/ball_falling_anim.png; sourceTree = "<group>"; };
 		7C46866D1629634200B93779 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/labyrinth/background.png; sourceTree = "<group>"; };
 		7CF5EF621620703800986A3E /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		7CF5EF64162070CA00986A3E /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -588,7 +580,6 @@
 			children = (
 				7C46866D1629634200B93779 /* background.png */,
 				421A3E0E15811AE80039CCC0 /* labyrinth-pack.plist */,
-				421A3E0F15811AE80039CCC0 /* labyrinth-spritesheet1.png */,
 				421A3E1015811AE80039CCC0 /* labyrinth.plist */,
 			);
 			name = labyrinth;
@@ -653,8 +644,6 @@
 		4271428E1574128600A6E2AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				426189ED15854D5000A2E58E /* end_menu.png */,
-				42FF0ED4158501FC00F2591D /* ball_fall */,
 				421A3E0D158117820039CCC0 /* labyrinth */,
 				4271428F1574128600A6E2AE /* Default.png */,
 				427142911574128600A6E2AE /* fps_images.png */,
@@ -1183,15 +1172,6 @@
 			name = ShapeWorkshop;
 			sourceTree = "<group>";
 		};
-		42FF0ED4158501FC00F2591D /* ball_fall */ = {
-			isa = PBXGroup;
-			children = (
-				42FF0EF21585046900F2591D /* ball_falling_anim.plist */,
-				42FF0EF31585046900F2591D /* ball_falling_anim.png */,
-			);
-			name = ball_fall;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1255,11 +1235,7 @@
 				427142A51574128600A6E2AE /* iTunesArtwork in Resources */,
 				427143DE1574128900A6E2AE /* ChangeLog in Resources */,
 				421A3E1115811AE80039CCC0 /* labyrinth-pack.plist in Resources */,
-				421A3E1215811AE80039CCC0 /* labyrinth-spritesheet1.png in Resources */,
 				421A3E1315811AE80039CCC0 /* labyrinth.plist in Resources */,
-				42FF0EF41585046900F2591D /* ball_falling_anim.plist in Resources */,
-				42FF0EF51585046900F2591D /* ball_falling_anim.png in Resources */,
-				426189EE15854D5000A2E58E /* end_menu.png in Resources */,
 				7CF5EF631620703900986A3E /* Default-Landscape@2x~ipad.png in Resources */,
 				7CF5EF67162070D700986A3E /* Default-Portrait@2x~ipad.png in Resources */,
 				7C46866E1629634200B93779 /* background.png in Resources */,
